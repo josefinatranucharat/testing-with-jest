@@ -2,3 +2,4 @@
 A Jest + npm lab session
 
 Utvecklingsmetodik
+Vårtermin 2022
