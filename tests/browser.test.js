@@ -1,4 +1,5 @@
 const { Builder, By, until } = require('selenium-webdriver');
+const { push } = require('../src/stack');
 require('geckodriver');
 
 const fileUnderTest = 'file://' + __dirname.replace(/ /g, '%20') + '/../dist/index.html';
@@ -31,4 +32,14 @@ describe('Clicking "Pusha till stacken"', () => {
 		await alert.sendKeys("Bananer");
 		await alert.accept();
 	});
+});
+
+
+test('Push can not be empty', async () => {
+    let push = await driver.findElement(By.id('push'));
+    await push.click();
+    let alertone = await driver.switchTo().alert();
+    await alertone.accept();
+    let alerttwo = await driver.switchTo().alert();
+    await alerttwo.accept();
 });
