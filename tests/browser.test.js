@@ -37,7 +37,7 @@ describe('Clicking "Pusha till stacken"', () => {
 
 test('Push can not be empty', async () => {
     let push = await driver.findElement(By.id('push'));
-    await push.click();
+    await push.click(this);
     let alertone = await driver.switchTo().alert();
     await alertone.accept();
     let alerttwo = await driver.switchTo().alert();
